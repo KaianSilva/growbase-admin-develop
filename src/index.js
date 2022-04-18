@@ -14,7 +14,7 @@ import makeServer from './@server/mirage-server';
 
 if (process.env.NODE_ENV === 'development') {
 	console.log('Start mirage-server...');
-	makeServer({ environment: 'development' });
+	/* makeServer({ environment: 'development' }); */
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
