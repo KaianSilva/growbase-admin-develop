@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { useHistory, useParams } from 'react-router';
 import ApiRecados from 'app/services/api/recados';
 
 export const getOne = createAsyncThunk('recado/getOne', async (id, { dispatch }) => {
@@ -21,7 +22,7 @@ export const deleteOne = createAsyncThunk('recado/deleteOne', async (id, { dispa
 		return response.data;
 	}
 	const { recado } = await response.data;
-	window.location.href = '/recados';
+	window.location.href = '/';
 	return { ...recado };
 });
 
