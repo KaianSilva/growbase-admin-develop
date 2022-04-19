@@ -16,13 +16,15 @@ export const getOne = createAsyncThunk('recado/getOne', async (id, { dispatch })
 export const deleteOne = createAsyncThunk('recado/deleteOne', async (id, { dispatch }) => {
 	console.log('id');
 	console.log(id);
+	const history = useHistory();
 	const response = await ApiRecados.deleteMessage(id);
 	console.log(response);
 	if (!response.success) {
 		return response.data;
 	}
 	const { recado } = await response.data;
-	window.location.href = '/';
+	/* window.location.href = '/'; */
+	history.push('/recados/new');
 	return { ...recado };
 });
 
